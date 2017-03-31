@@ -34,7 +34,7 @@ function TextToSpeechV1(options) {
 util.inherits(TextToSpeechV1, BaseService);
 TextToSpeechV1.prototype.name = 'text_to_speech';
 TextToSpeechV1.prototype.version = 'v1';
-TextToSpeechV1.URL = 'https://stream.watsonplatform.net/text-to-speech/api';
+TextToSpeechV1.URL = 'http://ivva.openstack.haifa.ibm.com:1080/text-to-speech/api';
 
 /**
  * Streaming speech synthesis of the text in a query parameter
@@ -48,7 +48,7 @@ TextToSpeechV1.URL = 'https://stream.watsonplatform.net/text-to-speech/api';
  * @param {Function} callback
  */
 TextToSpeechV1.prototype.synthesize = function(params, callback) {
-  params = extend({ accept: 'audio/ogg; codecs=opus' }, params);
+  params = extend({ accept: 'audio/wav' }, params);
 
   const parameters = {
     requiredParams: ['text'],
